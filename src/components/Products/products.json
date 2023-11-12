@@ -1,0 +1,54 @@
+{"products":[
+    {
+        "id": 1,
+        "img":"../../../img/racao-golden.jpg",
+        "alt": "Racao Golden",
+        "titulo": "Ração Pedigree 20kg",
+        "descricao": "GoldeN Special Cães Adultos Frango e Carne é um alimento Premium Especial formulado a partir dos mais modernos conceitos em nutrição.",
+        "preco": "R$149.99"
+    },
+    {
+        "id": 2,
+        "img":"../../../img/biscoito-pedigree.jpg",
+        "alt": "Biscoito Pedigree",
+        "titulo": "Biscoito Pedigree 1kg",
+        "descricao": "PEDIGREE® BISCROK™ petisco é crocante e tem um sabor irresistível que seu cão vai adorar! Além disso, você terá a certeza de que ele ficará muito mais feliz e saudável.",
+        "preco": "R$29.99"
+    },
+    {
+        "id": 3,
+        "img":"../../../img/comedouro.jpg",
+        "alt": "Comedouro",
+        "titulo": "Comedouro Plástico Duplo",
+        "descricao": "Comedouro Duplo Four-Plastic Peq. O produto está disponível em várias cores. Não podemos oferecer uma cor específica. Ao confirmar a compra, você receberá uma das cores disponiveis, sem poder escolher.",
+        "preco": "R$5.99"
+    },
+    {
+        "id": 4,
+        "img":"../../../img/caixa-transporte.jpg",
+        "alt": "Caixa Transportadora",
+        "titulo": "Caixa para Transporte",
+        "descricao": "Caixa transporte mec n.2 - azul garante praticidade ao levar seu companheiro consigo.",
+        "preco": "R$99.99"
+    },
+    {
+        "id": 5,
+        "img":"../../../img/shampoo-hydra.jpg",
+        "alt": "Shampoo Hydra",
+        "titulo": "Shampoo Hydra 5l",
+        "descricao": "O Neutro Shampoo possui fórmula concentrada que permite sua diluição em 10 partes de água. Contém ativos que limpam a pelagem, deixando-a macia e brilhante.",
+        "preco": "R$64.99"
+    },
+    {
+        "id": 6,
+        "img":"../../../img/maquina-tosa.jpg",
+        "alt": "Maquina Tosa",
+        "titulo": "Maquina Tosa",
+        "descricao": "As lâminas devem ser lubrificadas antes da primeira utilização e periodicamente de acordo com a utilização",
+        "preco": "R$249,99"
+    }
+]
+}
+
+
+      
