@@ -116,7 +116,7 @@ export const Cart: FunctionComponent = () => {
         </li>
         <li>
           CEP:
-          <input type="text" value={cardNumber} onChange={(e) => setCardNumber(e.target.value.replace(/[^0-9]/g, ''))} required />
+          <input type="text" onChange={(e) => setCardNumber(e.target.value.replace(/[^0-9]/g, ''))} required />
           <button onClick={handleGenerateRandomNumber}>Calcular Frete</button>
         </li>
       </ul>
