@@ -3,7 +3,12 @@
 Configurações iniciais:
 
 Certifique-se de que o node.js está instalado.
+
+Executar *npm install* para instalar os módulos node 
+
 Para instalar as dependências do projeto, digite *yarn* no terminal de comando 
+
+Para instalar o SASS (linguagem de extensão do CSS) utilize o comando *npm install --save-dev sass*
 
 Execute o projeto digitando *yarn.dev* no terminal de comando e apertando, em seguida, a tecla "o" para abrir o navegador
 
