@@ -1,8 +1,17 @@
 # Pet.comCarinho
+
+Configurações iniciais:
+
+Certifique-se de que o node.js está instalado.
+Para instalar as dependências do projeto digite *yarn* no terminal de comando 
+
+Execute o projeto digitando *yarn.dev* no terminal de comando
+
+
 Instruções para executar:
 >Executar comando yarn dev no terminal. Em seguida digitar "o", isso irá abrir o navegador com o programa 
 
-
+------------------------------------------------------------------------------------------------------------------------
 Descrição:
 Site de vendas para produtos de animais de estimação. Nós enviamos o produto direto para sua casa. Frete não incluso
 
