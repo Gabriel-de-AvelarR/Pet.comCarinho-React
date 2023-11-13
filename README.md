@@ -5,11 +5,7 @@ Configurações iniciais:
 Certifique-se de que o node.js está instalado.
 Para instalar as dependências do projeto, digite *yarn* no terminal de comando 
 
-Execute o projeto digitando *yarn.dev* no terminal de comando e apertando, em seguida, a tecla "o" para abrir o navegador.
-
-
-Instruções para executar:
->Executar comando yarn dev no terminal. Em seguida digitar "o", isso irá abrir o navegador com o programa 
+Execute o projeto digitando *yarn.dev* no terminal de comando e apertando, em seguida, a tecla "o" para abrir o navegador
 
 ------------------------------------------------------------------------------------------------------------------------
 Descrição:
