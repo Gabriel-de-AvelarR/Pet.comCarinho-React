@@ -1,87 +1,26 @@
-## Shopping Cart app
+# Pet.comCarinho
 
-A real-life shopping cart application built with React/Typescript/Vitest.
+Configurações iniciais:
 
->_I have written a tutorial about how I did this. You can find it [here](https://www.mihailgaberov.com/how-to-build-a-shopping-cart-with-react-and-typescript) or [here](https://www.freecodecamp.org/news/how-to-build-a-shopping-cart-with-react-and-typescript/)._
+Certifique-se de que o node.js está instalado.
 
+Executar *npm install* para instalar os módulos node 
 
-<hr />
+Para instalar as dependências do projeto, digite *yarn* no terminal de comando 
 
-[![Shopping Cart CI](https://github.com/mihailgaberov/shopping-cart-app/actions/workflows/main.yml/badge.svg)](https://github.com/mihailgaberov/shopping-cart-app/actions/workflows/main.yml)
+Para instalar o SASS (linguagem de extensão do CSS) utilize o comando *npm install --save-dev sass*
 
-## Tech stack
-- React / Typescript / Vite
-- SASS / CSS Modules
-- react-testing-library / Vitest
+Execute o projeto digitando *yarn.dev* no terminal de comando e apertando, em seguida, a tecla "o" para abrir o navegador
 
-### Screenshots (animated)
+------------------------------------------------------------------------------------------------------------------------
+Descrição:
+Site de vendas para produtos de animais de estimação. Nós enviamos o produto direto para sua casa. Frete não incluso
 
-#### Desktop view
-![Desktop](https://github.com/mihailgaberov/shopping-cart-app/blob/main/screenshots/desktop.gif)
+Requisitos: o sistema deve possuir uma etapa de cadastro e verificação de credenciais para entrar na loja. Haverão duas categorias de usuários, administrador e usuário. Os administradores deverão ter seus emails e senhas cadastrados por outros administradores, não podendo utilizar o campo de registro de dados comum aos outros usuários. 
+Os administradores poderão alterar a disponibilidade de produtos, gerenciar estoque, acessar o registro de compras de um usuário e excluí-lo. 
+Os usuários poderão acessar seus perfis, além de realizar compras, que ficam guardadas em um carrinho, e pedir a entrega no seu domicílio, ou optar pela retirada em uma loja. No primeiro caso, o sistema irá calcular o frete baseado no endereço fornecido. Por fim, a compra é finalizada mediante o fornecimento de um número de um cartão de crédito.
 
-#### Mobile view
-![Mobile](https://github.com/mihailgaberov/shopping-cart-app/blob/main/screenshots/mobile.gif)
+Código: Utilizamos Typescript, SCSS para a parte gráfica e React que nos permite criar diversos componentes e facilita o gerenciamento do projeto a medida que cresce o escolpo dele. Buscou-se fazer um código bem modularizado e fácil de se entender.
 
-## Application features:
-The Shopping Cart consists of two pages: the product list page and the cart page
-
-### I. Header
-1. The header component contains the application's logo on the left side, which is clickable and points to the product list page
-2. The header component contains the application's cart widget, which represents a cart icon with a number, signifying the count of the products added in the cart
-3. The header component is auto-shrinkable, which means whenever the user scrolls down, the header and its elements size is reduced
-4. The header component supports certain degree of opacity, which adds up to the look and feel of the app and also allows better visibility for the users
-
-### II. Product List page
-1. The product list page lists all available products, displaying each product's thumbnail image, title, price (formatted as GBP) and a button for adding it to the cart
-2. The product list page is usable on both desktop and mobile devices, whereas on desktop it leverages three items per row grid, on mobile view is two or one, depending on the viewport width
-
-### III. Cart page
-1. The cart page lists all products that are added to the cart, displaying each product's thumbnail image, title and an option for updating the desired quantity
-2. The logic of the quantifier component allows to add as many items as the user wants, but if the user decreases the count to zero, the product will be removed from the cart
-3. The cart page displays the total price of all items added, formatted as GBP, i.e. £100.23, on the bottom of the page, right after the list with all items 
-
-### IV. Footer
-1. The footer component displays social media links and copyright info, as well as the current version of the application
-
-### Demo
-:star: [Shopping Cart App](https://shopping-cart-app-coral.vercel.app/) :star:
-
-
-### Possible Improvements
-- Add item price in the cart page for better visibility
-- Add small animations to improve the UX, for example shaking the cart icon when a product is being added (or vibrating when used on mobile device)
-- Add options for registering and login, and saving choices for later
-- Add rating system where user can rate each product
-- Add option for leaving comments/reviews
-
-### Running the app locally
-
-To run the app, follow these steps.
-
-1. Ensure that [NodeJS](http://nodejs.org/) is installed.
-2. Install [yarn](https://classic.yarnpkg.com/en/docs/install/#windows-stable/).
-3. From the project folder, execute the following commands:
-
-To install dependencies:
-```shell
-  yarn
-```
-To run the app:
-
-```shell
-  yarn dev
-```
-
-#### Passing Tests
-![Tests](https://github.com/mihailgaberov/shopping-cart-app/blob/main/screenshots/passing-tests.png)
-
-To run the tests:
-
-```shell
-  yarn test
-```
-
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=mihailgaberov/shopping-cart-app&type=Date)](https://star-history.com/#mihailgaberov/shopping-cart-app&Date)
-
+Nossa estrutura e funcionalidades:
+O programa começa na área de login e registro. Ali o usuário irá fazer seu cadastro e acessar o sistema caso seus dados estejam gravados. Em seguida ele é direcionado para a pagina de compras, onde serão exibidas as opçoes de compra. Ao escolhe-las ele pode se direcionar para o carrinho, onde ele pode mudar a quantidade de cada item e finalizar a compra, mediante o preenchimento dos dados bancários. Seu histórico de compras ficará guardado e poderá ser acessado na área do usuário. 
