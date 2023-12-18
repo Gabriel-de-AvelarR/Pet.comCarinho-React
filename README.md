@@ -12,6 +12,16 @@ Para instalar o SASS (linguagem de extensão do CSS) utilize o comando *npm inst
 
 Execute o projeto digitando *yarn.dev* no terminal de comando e apertando, em seguida, a tecla "o" para abrir o navegador
 
+
+Par rodar o servidor, em um terminal separado, instale as dependencias para execucao do servidor com os comandos:
+
+*npm install express --save*
+*npm install cors*
+*npm install mongodb@4.1.0 --save*
+*npm install multer --save*
+
+Em seguida execute o script com o comando *node index.js*
+
 ------------------------------------------------------------------------------------------------------------------------
 Descrição:
 Site de vendas para produtos de animais de estimação. Nós enviamos o produto direto para sua casa. Frete não incluso
