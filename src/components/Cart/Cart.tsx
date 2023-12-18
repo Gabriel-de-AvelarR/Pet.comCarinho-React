@@ -57,18 +57,57 @@ export const Cart: FunctionComponent = () => {
 
   const isInputsFilled = cardNumber.trim() !== '' && expiryDate.trim() !== '' && securityCode.trim() !== '';
 
-  const handleComprar = () => {
-    // Salvar os produtos 
-    getProducts().forEach((prod) => {
-      addToPurchases(prod);
-    });
+  
+  const updateProduct = async (productId: number, existingProduct: any) => {
+    let API_URL = "http://localhost:5038/";
+    try {
+        if (!existingProduct) {
+            alert('Product not found');
+            return;
+        }
 
-    // Clear the cart
-    setCart({});
+        const currentQuantity = existingProduct.quantity;
+
+        const newQuantity = currentQuantity - 1;
+
+        // Perform the update by sending a PUT request to the server
+        const response = await fetch(`${API_URL}api/loja/UpdateProduct/${productId}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ quantity: newQuantity }), // Update the quantity field
+        });
+        console.log(response)
+        if (response.status==200) {
+            alert('Compra realizada');
+        } else {
+            alert('Erro ao atualizar estoque');
+        }
+    } catch (error) {
+        console.error('Erro ao processar a compra:', error);
+        alert('Error updating product');
+    }
+};
+
+
+const handleComprar = async () => {
+  try {
+      const products = getProducts();
+      for (const prod of products) {
+          await updateProduct(prod.id, prod);
+          addToPurchases(prod);
+      }
+
+      // Clear the cart
+      setCart({});
     
-    // Show an alert
-    alert('Compra realizada');
-  };
+  } catch (error) {
+      console.error('Erro ao processar a compra:', error);
+      alert('Erro ao processar a compra');
+  }
+};
+
 
   const handleGenerateRandomNumber = () => {
     const numericValue = parseInt(cardNumber, 10);

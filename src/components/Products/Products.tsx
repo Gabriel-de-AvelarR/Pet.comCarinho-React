@@ -19,6 +19,7 @@ export interface CartProps {
 }
 
 export const Products: FunctionComponent = () => {
+  let API_URL="http://localhost:5038/";
   const [isLoading, setIsLoading] = useState(true);
   const [products, setProducts] = useState<Product[]>([]);
   const [error, setError] = useState(false);
@@ -28,26 +29,20 @@ export const Products: FunctionComponent = () => {
     // Load products data from the JSON file
     const fetchProductsData = async () => {
       try {
-        const response = await fetch('src/components/Products/products.json');
-        if (response.ok) {
-          const data = await response.json();
-          const mappedProducts: Product[] = data.products.map((product: any) => ({
-            id: product.id,
-            thumbnail: product.img,
-            alt: product.alt,
-            title: product.titulo,
-            description: product.descricao,
-            price: parseFloat(product.preco.replace('R$', '').replace(',', '.')),
-            quantity: 0,
-          }));
-          console.log(data.products[0].description)
-          setProducts(mappedProducts);
-          setIsLoading(false);
-        } else {
-          setError(true);
-          setIsLoading(false);
-        }
+        const response = await fetch(API_URL+"api/loja/GetNotes").then(response=>response.json());
+        const mappedProducts: Product[] = response.map((product: any) => ({
+          id: product.id,
+          thumbnail: product.img,
+          alt: product.alt,
+          title: product.titulo,
+          description: product.descricao,
+          price: parseFloat(product.preco.replace('R$', '').replace(',', '.')),
+          quantity: product.quantidade,
+        }));
+        setProducts(mappedProducts);
+        setIsLoading(false);
       } catch (error) {
+        console.log(error)
         setError(true);
         setIsLoading(false);
       }
@@ -57,12 +52,14 @@ export const Products: FunctionComponent = () => {
   }, []);
 
   const addToCart = (product: Product): void => {
-    product.quantity = 1;
-
-    setCart((prevCart) => ({
-      ...prevCart,
-      [product.id]: product,
-    }));
+    if (product.quantity >= 1) {
+      setCart((prevCart) => ({
+        ...prevCart,
+        [product.id]: product,
+      }));
+    } else {
+      alert("Esse produto está esgotado");
+    }
   };
 
   const isInCart = (productId: number): boolean => Object.keys(cart || {}).includes(productId.toString());
@@ -84,6 +81,7 @@ export const Products: FunctionComponent = () => {
             <h3>{product.title}</h3>
             <p>{product.description}</p>
             <p>Preco: <CurrencyFormatter amount={product.price} /></p>
+            <p>Em estoque: {product.quantity}</p>
             <button disabled={isInCart(product.id)} onClick={() => addToCart(product)}>Adicionar Carrinho</button>
           </div>
         ))}
